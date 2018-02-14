@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1 Поиск автомобилей
+  form(method='POST', action='/search')
+    .container#form-group
+      label Выберите область/области
+      br
+      select.selectDistr(multiple, name='location_id', size='6')
+        option(value='623840') Брянская область
+        option(value='643030') Орловская область
+        option(value='654860') Смоленская область
+        option(value='630270') Калужская область
+        option(value='636030') Курская область
+        option(value='637680') Московская область
+      br
+    .container#form-group
+      label Марка 
+       select.selectMark(name='params[210]')
+        option(value='1220_280') LADA
+        option(value='1218_278') Volkswagen
+        option(value='1177_241') Ford
+        option(value='1199_259') Mitsubishi
+    .container#form-group
+      label Модель 
+       select.selectModel(name='params[280]')
+        option(value="2639") 2215
+        option(value="2648") Priora
+    .container#form-group
+      label Год выпуска 
+       select.selectYear(name='params[188][from]')
+        option(value='890') 1997
+        option(value='899') 2006
+        option(value='900') 2007
+        option(value='901') 2008
+    .container#form-group
+      label Минимальная цена 
+      input.form-control(name='pmin', type='text', size='10')
+      label Максимальная цена
+      input.form-control(name='pmax', type='text', size='10')
+      br
+    .container
+      input.btn.btn-primaty(type='submit', value='Найти')

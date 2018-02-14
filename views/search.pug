@@ -1,0 +1,19 @@
+extends layout
+block content
+  -var n = -1;
+  while ++n < notices.length
+    br
+    .row(stlye="height: 10rem")
+      img.img-rounded.col-md-2(src=notices[n].data[2], alt='None image')
+      .card.col-md-4
+        .card-header: h4: a(href=notices[n].data[1])=notices[n].name
+        .card-body
+          .card-subtitle.md-2.text-muted=notices[n].location
+          .card-text=notices[n].data[0]
+      if (++n < notices.length)
+        img.img-rounded.col-md-2(src=notices[n].data[2], alt='None image')
+        .card.col-md-4
+          .card-header: h4: a(href=notices[n].data[1])=notices[n].name
+          .card-body
+            .card-subtitle.md-2.text-muted=notices[n].location
+            .card-text=notices[n].data[0]
