@@ -19,6 +19,7 @@ app.get('/', function(req, res) {
 
 app.post('/search', function(req, res) {
     var nots = [];
+    console.log(req.body);
     parser.Parse('https://www.avito.ru/search', req.body, function(response, cp) {
         nots = response;
         res.render('search', { notices: nots });

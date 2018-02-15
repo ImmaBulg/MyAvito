@@ -26,6 +26,8 @@ module.exports.Parse = function(url, keys, callback) {
                     'params[210]': keys['params[210]'].split('_')[0],
                     'params[280]': keys['params[280]'],
                     'params[188][from]': keys['params[188][from]'],
+                    'params[185]': keys['params[185]'],
+                    'params[1374][from]': keys['params[186]'],
                     'pmax': keys['pmax']
                 };
                 break;
@@ -37,6 +39,8 @@ module.exports.Parse = function(url, keys, callback) {
                     'params[210]': keys['params[210]'].split('_')[0],
                     'params[278]': keys['params[278]'],
                     'params[188][from]': keys['params[188][from]'],
+                    'params[185]': keys['params[185]'],
+                    'params[1374][from]': keys['params[186]'],
                     'pmax': keys['pmax']
                 };
                 break;
@@ -48,6 +52,8 @@ module.exports.Parse = function(url, keys, callback) {
                     'params[210]': keys['params[210]'].split('_')[0],
                     'params[241]': keys['params[241]'],
                     'params[188][from]': keys['params[188][from]'],
+                    'params[185]': keys['params[185]'],
+                    'params[1374][from]': keys['params[186]'],
                     'pmax': keys['pmax']
                 };
                 break;
@@ -59,6 +65,8 @@ module.exports.Parse = function(url, keys, callback) {
                     'params[210]': keys['params[210]'].split('_')[0],
                     'params[259]': keys['params[259]'],
                     'params[188][from]': keys['params[188][from]'],
+                    'params[185]': keys['params[185]'],
+                    'params[1374][from]': keys['params[186]'],
                     'pmax': keys['pmax']
                 };
                 break;
@@ -101,7 +109,6 @@ module.exports.Parse = function(url, keys, callback) {
                         var link = 'https:/avito.ru' + $('.item-description-title-link').attr('href');
                         var photoLink = 'None';
                         try {
-                            console.log($('.item-photo>a>img'));
                             photoLink = $('.item-photo>a>img').attr('src');
                             if (photoLink == 'https://www.avito.st/s/a/i/0.gif?f8b9e75')
                                 photoLink = 'https:' + $('.item-photo>a>img').attr('data-srcpath');
